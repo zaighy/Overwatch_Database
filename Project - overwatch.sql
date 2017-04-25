@@ -82,18 +82,3 @@ CREATE TABLE user_hero_stats (
     CONSTRAINT userherostats_heroes_frn FOREIGN KEY (hero_id)
         REFERENCES heroes (id)
 );
-
-CREATE TABLE game (
-    id int primary key,
-    maps INT,
-    hero INT,
-    brawl INT,
-    users varchar(100),
-    game_mode INT,
-    CONSTRAINT game_mp_frn FOREIGN KEY (maps) REFERENCES maps(id),
-    CONSTRAINT game_hr_frn FOREIGN KEY (hero) REFERENCES heroes(id),
-    CONSTRAINT game_brl_frn FOREIGN KEY (brawl) REFERENCES brawl(id),
-    CONSTRAINT game_usr_frn FOREIGN KEY (users) REFERENCES users(battletag),
-    CONSTRAINT game_md_frn FOREIGN KEY (game_mode) REFERENCES game_mode(id)
-);
-
